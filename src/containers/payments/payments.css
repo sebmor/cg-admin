@@ -1,0 +1,7 @@
+.confirmed {
+  color: green;
+}
+
+.pending {
+  color: red;
+}

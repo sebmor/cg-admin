@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import dateFormat from 'dateformat'
+// MUI
 import Paper from '@material-ui/core/Paper'
 // Components
 import PaginatedTable from './../../components/common/table/PaginatedTable'

@@ -7,9 +7,7 @@ import Typography from '@material-ui/core/Typography'
 import { Paper } from '@material-ui/core'
 import Toolbar from '@material-ui/core/Toolbar'
 import CircularProgress from '@material-ui/core/CircularProgress'
-import Checkbox from '@material-ui/core/Checkbox'
 import Divider from '@material-ui/core/Divider'
-import { withStyles } from '@material-ui/core/styles'
 // Components
 import DetailRow from './../../components/common/detail/DetailRow'
 // Utils
@@ -29,7 +27,7 @@ class Bet extends Component {
     if (!this.props.bet) {
       return <CircularProgress />
     }
-    const { classes, bet } = this.props
+    const { bet } = this.props
     const { id, player_id, date, wager, profit, game_type, game_details, seed_details } = bet
     const result = profit >= 0 ? 'win' : 'loss'
 

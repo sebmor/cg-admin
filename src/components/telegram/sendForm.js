@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button'
 import { withStyles } from '@material-ui/core/styles'
 import TextInput from './../common/form/TextInput'
 import Snackbar from '@material-ui/core/Snackbar'
+import SnackbarContent from '@material-ui/core/SnackbarContent'
 // Actions
 import { broadcastMessage } from './../../api/telegram'
 // CSS
@@ -25,9 +26,10 @@ const formikEnhancer = withFormik({
     sendMessage: ''
   }),
   // Handle Submit
-  handleSubmit: (values, { props, setSubmitting, setErrors }) => {
+  handleSubmit: (values, { props, setSubmitting, setErrors, setStatus }) => {
     broadcastMessage(values)
     .then(() => {
+      setStatus(true)
       setSubmitting(false)
     })
     .catch((errors) => {
@@ -37,7 +39,7 @@ const formikEnhancer = withFormik({
   }
 })
 
-const SendForm = ({classes, errors, isSubmitting}) => {
+const SendForm = ({classes, errors, isSubmitting, status}) => {
   return (
     <div>
       <Toolbar>
@@ -45,7 +47,6 @@ const SendForm = ({classes, errors, isSubmitting}) => {
       </Toolbar>
       <Divider />
       <Snackbar
-        variant="success"
         direction="up"
         open={!!errors.form}
         message={errors.form}
@@ -74,6 +75,7 @@ const SendForm = ({classes, errors, isSubmitting}) => {
               Broadcast Message
           </Button>
         </div>
+        {status && <SnackbarContent className={classes.successBar} message="Broadcast sent successfully!" />}
       </Form>
     </div>
   )

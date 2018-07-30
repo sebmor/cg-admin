@@ -5,7 +5,8 @@ import MenuList from '@material-ui/core/MenuList'
 import DashboardIcon from '@material-ui/icons/Dashboard'
 import PeopleIcon from '@material-ui/icons/People'
 import BetsIcon from '@material-ui/icons/Games'
-import PaymentIcon from '@material-ui/icons/Payment'
+import FlightLandIcon from '@material-ui/icons/FlightLand'
+import FlightTakeOffIcon from '@material-ui/icons/FlightTakeoff'
 import BroadcastIcon from '@material-ui/icons/Textsms'
 // Components
 import NavItem from './NavItem'
@@ -27,7 +28,8 @@ const Navigation  = ({children, classes, location}) => (
       <NavItem href="/dashboard" icon={DashboardIcon} title="Dashboard" />
       <NavItem href="/players" icon={PeopleIcon} title="Players" />
       <NavItem href="/bets" icon={BetsIcon} title="Bets" />
-      <NavItem href="/transactions" icon={PaymentIcon} title="Transactions" />
+      <NavItem href="/deposits" icon={FlightLandIcon} title="Deposits" />
+      <NavItem href="/payments" icon={FlightTakeOffIcon} title="Payments" />
       <NavItem href="/broadcast" icon={BroadcastIcon} title="Broadcast" />
     </MenuList>
   </Drawer>

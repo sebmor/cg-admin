@@ -19,7 +19,7 @@ const PaginatedRow = (props) => {
         const { Cell } = column
         if (!value) return null
         if (Cell) {
-          return <TableCell key={i} numeric={column.numeric}><Cell value={value.value} /></TableCell>
+          return <TableCell key={i} numeric={column.numeric}><Cell row={row} value={value.value} /></TableCell>
         }
         return <TableCell key={i} numeric={column.numeric}>{value.value}</TableCell>
         }

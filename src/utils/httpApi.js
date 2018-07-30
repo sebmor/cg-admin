@@ -1,9 +1,8 @@
 import axios from 'axios'
 import qs from 'qs'
-import CONFIG from './../config.json'
 
 const api = axios.create({
-  baseURL: CONFIG.api_uri,
+  baseURL: process.env.REACT_APP_API_URL,
   timeout: 10000,
   responseType: 'json',
   paramsSerializer (params) {

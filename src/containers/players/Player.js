@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import dateFormat from 'dateformat'
+import { get } from 'lodash'
 // MUI
 import Typography from '@material-ui/core/Typography'
 import { Paper } from '@material-ui/core'
@@ -33,7 +34,7 @@ class Player extends Component {
     const { classes, player } = this.props
     const { id, created_at, tg_uid, tg_first_name, tg_last_name, tg_username, tg_language_code, language, is_vip } = player
     const balance = satoshiFormat(player.balances.balance)
-    const address = player.addresses.address
+    const address = get(player, 'addresses.address')
 
     return (
       <div>

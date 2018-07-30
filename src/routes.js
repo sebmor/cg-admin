@@ -7,7 +7,8 @@ import { userIsAuthenticated, userIsNotAuthenticated } from './components/hocs/A
 import App from './containers/app'
 import Login from './containers/login'
 import Dashboard from './containers/dashboard'
-import Transactions from './containers/transactions'
+import Deposits from './containers/deposits'
+import Payments from './containers/payments'
 import Players from './containers/players'
 import Player from './containers/players/Player'
 import Bets from './containers/bets'
@@ -28,7 +29,8 @@ export default () => (
       <PrivateRoute path="/players/:id" component={Player} />
       <PrivateRoute path="/bets" exact component={Bets} />
       <PrivateRoute path="/bets/:id" component={Bet} />
-      <PrivateRoute path="/transactions" exact component={Transactions} />
+      <PrivateRoute path="/deposits" exact component={Deposits} />
+      <PrivateRoute path="/payments" exact component={Payments} />
       <PrivateRoute path="/broadcast" exact component={Broadcast} />
     </App>
   </Switch>
